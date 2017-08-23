@@ -33,6 +33,15 @@ var time = 30;
 var inc = 0;
 
 window.onload = function () {
+    var sizeWidth = $(window).width();
+
+    if(sizeWidth>1900){
+        $( "#gameGanarModal" ).removeClass( "modal-sm" ).addClass( "modal-lg" );
+        $( "#gamePerderModal" ).removeClass( "modal-sm" ).addClass( "modal-lg" );
+    }else{
+        $( "#gameGanarModal" ).removeClass( "modal-lg" ).addClass( "modal-sm" );
+        $( "#gamePerderModal" ).removeClass( "modal-lg" ).addClass( "modal-sm" );
+    }
 
     $("#ex4").slider({
         reversed: true
@@ -43,14 +52,16 @@ window.onload = function () {
     });
 
     $("#startbutton").click(function () {
-        console.log("Juego iniciado" + $("#ex4").val());
-        controlStopWatch = true;
-        startRecord = true;
-        time = $("#ex5").val() * 10;
-        $("#acumuladorJugador").css("width", 0);
-        $("#valAcumm").html("0 %");
-        inc = 0;
-        startTime();
+        if (startRecord == false) {
+            console.log("Juego iniciado" + $("#ex4").val());
+            controlStopWatch = true;
+            startRecord = true;
+            time = $("#ex5").val() * 10;
+            $("#acumuladorJugador").css("width", 0);
+            $("#valAcumm").html("0 %");
+            inc = 0;
+            startTime();
+        }
     });
 
     $("#stopbutton").click(function () {
@@ -66,11 +77,16 @@ window.onload = function () {
             $("#tiempo").html("00:" + time);
         time--;
         if (controlStopWatch == true)
-            var t = setTimeout(startTime, 1000);
-        if (time == 0){
-            startRecord = false;
-            controlStopWatch = false;
-        }
+            var t = setTimeout(function () {
+                if (time == 0) {
+                    $('#modalGamePerder').modal('show');
+                    $("#tiempo").html("00:0" + time);
+                    startRecord = false;
+                    controlStopWatch = false;
+                } else
+                    startTime();
+            }, 1000);
+
     }
 
     var div = document.getElementById('progressBarControl'),
@@ -155,6 +171,12 @@ function drawLoop(time) {
             if (inc <= $("#progressBarControl").width()) {
                 $("#acumuladorJugador").css("width", inc);
                 $("#valAcumm").html(parseFloat((inc * 100) / $("#progressBarControl").width()).toFixed(1) + " %");
+            } else {
+                startRecord = false;
+                controlStopWatch = false;
+                $('#modalGameGanar').modal('show');
+                sonidoNivel = document.getElementById("audioCrunch");
+                sonidoNivel.play();
             }
         }
     }

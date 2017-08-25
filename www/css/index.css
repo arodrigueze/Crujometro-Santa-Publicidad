@@ -151,6 +151,133 @@ body {
     padding:0;
 }
 
+@media screen and (min-width: 1000px) {
+    html,body {
+    color: white;
+    }
+
+body { 
+  background: url("../fs/fondo.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*Pagina jugar*/
+#contenedorGame{
+    height: 100%;
+    width: 100%;
+}
+
+
+.left_div{
+    margin:0px;
+    padding: 0px;
+    padding-top: 2%;
+    text-align: center;
+    height: 100%;
+    font-family: ms100;
+    width: 33%;
+    display: inline-block;
+}
+
+.gameContent{
+    height: 100%;
+    width: 100%;
+    margin-top:50px;
+}
+
+.button {
+    background-color: #fec100;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#stopbutton{
+    border-radius: 10px;
+    font-family: ms100;
+    background-color: #c81e24;
+    width: 100%;
+}
+
+#valAcumm{
+    font-size: 50px;
+}
+
+#startbutton{
+    border-radius: 10px;
+    font-family: ms100;
+    background-color: #262262;
+    width: 100%;
+}
+
+.progress{
+    height: 40px;
+}
+
+#tiempo{
+    font-size:85px;
+    height: 100%;
+    font-family: ms100;
+}
+
+#progressBarControl{
+    margin-top: 180px;
+    height: 100px;
+}
+
+.textJuego{
+    font-family: ms100;
+    text-align: right;
+}
+
+#meter{
+    border-radius: 20px;
+}
+
+.modalGame{
+    margin-top: 20%;
+    text-align: center;
+}
+
+.mensajeGanarPerder h1{
+    margin:0;
+    padding: 7%;
+    color:#ffde00;
+    font-family: ms900;
+    font-size: 2.5em;
+}
+
+.mensajeGanarPerder h2{
+    margin:0;
+    margin-top:0;
+    padding-bottom: 2%;
+    color:white;
+    font-size: 1.5em;
+    font-family: ms100;
+}
+
+.modal-content{
+    border-radius: 15px;
+}
+
+.modal-body{
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(133,43,109,1);
+    padding:0;
+}
+
+}
+
 @media screen and (min-width: 1300px) {
     html,body {
     color: white;

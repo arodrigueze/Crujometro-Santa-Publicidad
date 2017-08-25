@@ -35,12 +35,12 @@ var inc = 0;
 window.onload = function () {
     var sizeWidth = $(window).width();
 
-    if(sizeWidth>1900){
-        $( "#gameGanarModal" ).removeClass( "modal-sm" ).addClass( "modal-lg" );
-        $( "#gamePerderModal" ).removeClass( "modal-sm" ).addClass( "modal-lg" );
-    }else{
-        $( "#gameGanarModal" ).removeClass( "modal-lg" ).addClass( "modal-sm" );
-        $( "#gamePerderModal" ).removeClass( "modal-lg" ).addClass( "modal-sm" );
+    if (sizeWidth > 1900) {
+        $("#gameGanarModal").removeClass("modal-sm").addClass("modal-lg");
+        $("#gamePerderModal").removeClass("modal-sm").addClass("modal-lg");
+    } else {
+        $("#gameGanarModal").removeClass("modal-lg").addClass("modal-sm");
+        $("#gamePerderModal").removeClass("modal-lg").addClass("modal-sm");
     }
 
     $("#ex4").slider({
@@ -68,6 +68,12 @@ window.onload = function () {
         console.log("Juego detenido");
         startRecord = false;
         controlStopWatch = false;
+        var timeTemp = $("#ex5").val() * 10;
+        setTimeout(function () {
+            $("#valAcumm").html("0 %");
+            $("#tiempo").html("00:" + timeTemp);
+            $("#acumuladorJugador").css("width", 0);
+        }, 1100);
     });
 
     function startTime() {

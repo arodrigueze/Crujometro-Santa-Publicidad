@@ -26,32 +26,28 @@ body {
 /*Pagina jugar*/
 #contenedorGame{
     height: 100%;
-}
-
-#valAcumm{
-    font-size: 50px;
+    text-align: center;
 }
 
 .left_div{
     margin:0px;
     padding: 0px;
-    padding-top: 2%;
     text-align: center;
     height: 100%;
     font-family: ms100;
-    width: 33%;
+    width: 30%;
     display: inline-block;
 }
 
 .gameContent{
     height: 100%;
-    margin-top:12%;
+    margin-top:13%;
 }
 
 .button {
     border: none;
     color: white;
-    padding: 15px 5px;
+    padding: 5px 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -60,10 +56,11 @@ body {
     cursor: pointer;
 }
 
-.titulo{
+.titulos{
     padding:0px;
     margin:0px;
 }
+
 
 #stopbutton{
     border-radius: 10px;
@@ -86,7 +83,7 @@ body {
 }
 
 #progressBarControl{
-    margin-top: 100px;
+    margin-top: 70px;
     height: 120px;
 }
 
@@ -125,4 +122,12 @@ body {
     border-radius: 10px;
     background-color: rgba(133,43,109,1);
     padding:0;
+}
+
+#valAcumm{
+    font-size: 50px;
+}
+
+#mdiv{
+    width: 25%;
 }

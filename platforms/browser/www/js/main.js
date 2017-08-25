@@ -25,7 +25,7 @@ var audioContext = null;
 var meter = null;
 var canvasContext = null;
 var WIDTH = 50;
-var HEIGHT = 200;
+var HEIGHT = 100;
 var rafID = null;
 var startRecord = false;
 var controlStopWatch = true;
@@ -162,7 +162,7 @@ function drawLoop(time) {
 
     canvasContext.fillRect(0, HEIGHT - meter.volume * HEIGHT * 1.4, WIDTH, HEIGHT);
     $("#valLevel").html($("#ex4").val() + " %");
-    $("#valTime").html($("#ex5").val() * 10 + " Segundos");
+    $("#valTime").html($("#ex5").val() * 10 + " seg.");
 
     if (startRecord == true) {
         if (meter.volume > 0.01 * $("#ex4").val()) {
